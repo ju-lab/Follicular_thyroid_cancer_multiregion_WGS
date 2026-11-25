@@ -2,7 +2,7 @@
 # Sourced by 11_fig4.R: uses DATA_DIR and the clock-like rate (mutation.lm.all) from that session.
 # Molecular time (years) = early SNV rate per Mb x 3,140 Mb (genome size) / clock-like mutations per year.
 
-setwd(file.path(DATA_DIR, '50_additional/timing_analysis/timing_output'))
+setwd(file.path(DATA_DIR, '50_additional/timing_output'))
 
 library(dplyr)
 library(data.table)
