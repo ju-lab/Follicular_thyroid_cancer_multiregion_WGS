@@ -28,7 +28,7 @@ Derived, de-identified data needed to draw the figures. Patient IDs follow the p
 | `thyroid_sample_metadata.xlsx` | Sample metadata (`Analysis_v5`), point driver mutations (`Driver`), arm-level copy number (`copynumber`), region coordinates on the slide (`distance_mutation`) and copy-number gain timing (`copynumber_timing2`) |
 | `50_additional/clean_segments/` | Copy-number segments per sample (Sequenza) |
 | `50_additional/sample_mutation_with_drivers/tree_gg_list.rds` | Phylogenetic trees per patient (ggtree objects) |
-| `50_additional/timing_analysis/timing_output/` | Early SNV rates on amplified segments, per sample |
+| `50_additional/timing_output/` | Early SNV rates on amplified segments, per sample |
 
 Raw sequencing data are available as described in the Data availability section of the paper.
 
