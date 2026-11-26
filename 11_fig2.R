@@ -40,7 +40,7 @@ source(file.path(CODE_DIR, 'Thyroid_sources.R'))
 
 # METADATA ----------------------------------------------------------------
 metadata_file = file.path(DATA_DIR, "thyroid_sample_metadata.xlsx")
-metadata <- read_excel(metadata_file, sheet = "Analysis_v5", skip= 8)
+metadata <- read_sample_metadata(metadata_file)
 
 # patient order (by Diagnosis + Ras)
 patient_order <- metadata %>%

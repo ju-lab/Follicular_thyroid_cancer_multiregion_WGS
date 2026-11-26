@@ -25,6 +25,19 @@ library(scales)
 if (!"Arial" %in% fonts()) font_import(pattern = "Arial", prompt = FALSE)
 loadfonts(device = "pdf")
 
+# Sample metadata ---------------------------------------------------------
+
+## Analysis_v5: `ID` is the sample name used for the sequencing data (e.g. C01-1) and `label` is the
+## region name used in the other sheets and the data files (e.g. C01_P_9). The figure scripts look
+## data up by region name, so `ID` is set to the region name (C01-P-9; for FTA, A01-7_8) and the
+## sample name is kept as `sample_id`.
+read_sample_metadata <- function(file) {
+  readxl::read_excel(file, sheet = "Analysis_v5", skip = 8) %>%
+    dplyr::filter(!is.na(ID)) %>%
+    dplyr::rename(sample_id = ID) %>%
+    dplyr::mutate(ID = ifelse(grepl("^A", label), sub("_", "-", label), gsub("_", "-", label)))
+}
+
 # Color palettes ----------------------------------------------------------
 
 ## diagnosis colours (FTA, minimally invasive FTC, widely invasive FTC)

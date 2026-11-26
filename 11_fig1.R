@@ -13,7 +13,7 @@ setwd(FIGUREPATH)
 # sample metadata organization --------------------------------------------
 ## March 11 2025
 metadata_file = file.path(DATA_DIR, "thyroid_sample_metadata.xlsx")
-metadata <- read_excel(metadata_file, sheet = "Analysis_v5", skip= 8)%>% dplyr::filter(!is.na(Patient)) %>%
+metadata <- read_sample_metadata(metadata_file)%>% dplyr::filter(!is.na(Patient)) %>%
   dplyr::mutate(Patient = ifelse(grepl('^A',Patient), gsub('A','FTA', Patient), gsub('C','FTC', Patient)))
 
 # patient order (by Diagnosis + Ras)
